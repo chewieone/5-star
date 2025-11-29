@@ -161,7 +161,16 @@ The JWT token:
 
 ### Common Issues
 
-1. **Database connection error**
+1. **"Environment variable not found: DATABASE_URL" error**
+   - Make sure you have created a `.env` file in the root directory
+   - Copy from the example: `cp .env.example .env`
+   - Edit `.env` and set your PostgreSQL connection string:
+     ```
+     DATABASE_URL="postgresql://postgres:password@localhost:5432/quickgrab"
+     ```
+   - Restart the development server after changing `.env`
+
+2. **Database connection error**
    - Ensure PostgreSQL is running
    - Verify `DATABASE_URL` in `.env` is correct
    - Check that the database exists
